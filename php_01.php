@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PHP DEMO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
 <h1>Harjutus 1</h1>
@@ -217,20 +218,63 @@
         <input type="submit" value="Eemalda">
     </form>
 
+<h4>riigid</h4>
+
+
+    <?php
+    //   <!--h05  -->
+    //   <!--joosep alasoo it-23-->
+    //   <!--21.02.25-->
+    $riigid =array("Indonesia","Canada","Kyrgyzstan","Germany","Philippines",
+    "Philippines","Canada","Philippines","South Sudan","Brazil",
+    "Democratic Republic of the Congo","Indonesia","Syria","Sweden",
+    "Philippines","Russia","China","Japan","Brazil","Sweden","Mexico","France",
+    "Kazakhstan","Cuba","Portugal","Czech Republic");
+
+    $pikkim_nimi = "";
+    foreach ($riigid as $riik) {
+        if (strlen($riik) > strlen($pikkim_nimi)) {
+            $pikkim_nimi = $riik;
+        }
+    }
+
+    echo "Pikima riigi nimi on: $pikkim_nimi<br>";
+    echo "Pikima riigi nime pikkus on: " . strlen($pikkim_nimi) . " märki<br>";
+    ?>
+
+<h4>Hiina nimed</h4>
+
+    <?php
+    //   <!--h05  -->
+    //   <!--joosep alasoo it-23-->
+    //   <!--21.02.25-->
+    $hiina_nimed = array("瀚聪","月松","雨萌","展博","雪丽","哲恒","慧妍","博裕","宸瑜","奕漳",
+    "思宏","伟菘","彦歆","睿杰","尹智","琪煜","惠茜","晓晴","志宸","博豪",
+    "璟雯","崇杉","俊誉","军卿","辰华","娅楠","志宸","欣妍","明美");
+
+    sort($hiina_nimed);
+
+    echo "Esimene nimi on: " . $hiina_nimed[0] . "<br>";
+    echo "Viimane nimi on: " . end($hiina_nimed) . "<br>";
+    ?>
+
+
+<h4>Google</h4>
+
+    <?php
+    //   <!--h05  -->
+    //   <!--joosep alasoo it-23-->
+    //   <!--21.02.25-->
+    $nimed = array("Feake","Bradwell","Dreger","Bloggett","Lambole","Daish","Lippiett","
+    Blackie","Stollenbeck","Houseago","Dugall","Sprowson","Kitley","Mcenamin",
+    "Allchin","Doghartie","Brierly","Pirrone","Fairnie","Seal","Scoffins",
+    "Galer","Matevosian","DeBlase","Cubbin","Izzett","Ebi","Clohisey",
+    "Prater","Probart","Samwaye","Concannon","MacLure","Eliet","Kundt","Reyes");
+        
+    ?>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>  
   </body>
 </html>
