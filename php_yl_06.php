@@ -8,12 +8,12 @@
   </head>
   <body>
       <div class="container">
-        <h1>genereeri 1-100</h1>
-        <!--h06  -->
+        <h1>ülesann 6.1</h1>
+        <!--h06.1  -->
         <!--joosep alasoo it-23-->
         <!--03.03.25-->
-        <?php
-       for ($i = 1; $i <= 100; $i++) {
+    <?php
+    for ($i = 1; $i <= 100; $i++) {
         if ($i % 10 == 1) {
             echo '<div class="row">';
         }
@@ -23,7 +23,70 @@
         }
     }
 
-        ?>     
+    ?>  
+
+
+
+        <h1>ülesanne 6.2</h1>
+        <!--h06.2  -->
+        <!--joosep alasoo it-23-->
+        <!--03.03.25-->
+        <?php
+        for ($i = 1; $i <= 10; $i++) {
+            echo '* ';
+        }
+        ?>
+        
+
+        <h1>ülesanne 6.3</h1>
+        <?php
+        for ($i = 1; $i <= 10; $i++) {
+            echo '*<br>';
+        }
+        ?>
+        <h1>ülesanne 6.4</h1>
+        <?php
+        for ($i = 1; $i <= 4; $i++) {
+        for ($j = 1; $j <= 6; $j++) {
+            echo '* ';
+        }
+        echo '<br>';
+        }
+        ?>
+        <h1>ülesanne 6.5</h1>
+        <?php
+        for ($i = 10; $i >= 2; $i--) {
+            if ($i % 2 == 0) { 
+                echo $i . '<br> ';
+            }
+        }
+        ?>
+        <h1>ülesanne 6.6</h1>
+        <?php
+        for ($i = 100; $i >= 2; $i--) {
+            if ($i % 3 == 0) { 
+                echo $i . '<br> ';
+            }
+        }
+        ?>
+        <h1>ülesanne 6.7</h1>
+        <?php
+        $poisid = array('juhan', 'miku', 'uku', 'joosep', 'mihkel');
+        $tüdrukud = array('mari', 'kati', 'juuli', 'brigitta', 'kristina');
+        for ($i = 0; $i < count($poisid); $i++) {
+            echo $poisid[$i] . ' ja ' . $tüdrukud[$i] . '<br>';
+        }
+        ?>
+
+        
+        
+
+
+
+
+
+
+
       </div>
         
 
