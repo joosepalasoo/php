@@ -126,7 +126,55 @@
         <!--joosep alasoo it-23-->
         <!--03.03.25-->
     <?php
-    
+                         function isikukood(){
+                            echo "<form action='#' method='get'>
+                                <div class='form-group'>
+                                    <label for='isikukood'>Isikukood</label>
+                                    <input type='number' name='isikukood' id='isikukood' class='form-control' value='isikukood' />
+                                </div>
+                                <input type='submit' value='Saada' class='btn btn-primary'/>
+                            </form>";
+                            if (isset($_GET['isikukood'])){
+                                if (strlen($_GET['isikukood']) == 11){
+                                    echo "Isikukood on korrektne";
+                                } else {
+                                    echo "Isikukood on vale";
+                                }
+                                switch (substr($_GET['isikukood'], 0, 1)){
+                                    case 1:
+                                        $aasta = "18";
+                                        $sugu = "mees";
+                                        break;
+                                    case 2:
+                                        $aasta = "18";
+                                        $sugu = "naine";
+                                        break;
+                                    case 3:
+                                        $aasta = "19";
+                                        $sugu = "mees";
+                                        break;
+                                    case 4:
+                                        $aasta = "19";
+                                        $sugu = "naine";
+                                        break;
+                                    case 5:
+                                        $aasta = "20";
+                                        $sugu = "mees";
+                                        break;
+                                    case 6:
+                                        $aasta = "20";
+                                        $sugu = "naine";
+                                        break;
+                                    default:
+                                        echo "See pole õige isikukood";
+                                        break;
+                                }
+                                echo "<br> Sugu: ".$sugu;
+                                echo "<br> Sünd: ".$aasta.substr($_GET['isikukood'], 1, 2);
+                            }
+                        }
+                        isikukood();
+                        echo "<br><br>";
     ?> 
     
     
@@ -138,55 +186,19 @@
     <!--joosep alasoo it-23-->
     <!--03.03.25-->
     <?php
-                     function isikukood(){
-                    echo "<form action='#' method='get'>
-                        <div class='form-group'>
-                            <label for='isikukood'>Isikukood</label>
-                            <input type='number' name='isikukood' id='isikukood' class='form-control' value='isikukood' />
-                        </div>
-                        <input type='submit' value='Saada' class='btn btn-primary'/>
-                    </form>";
-                    if (isset($_GET['isikukood'])){
-                        if (strlen($_GET['isikukood']) == 11){
-                            echo "Isikukood on korrektne";
-                        } else {
-                            echo "Isikukood on vale";
-                        }
-                        switch (substr($_GET['isikukood'], 0, 1)){
-                            case 1:
-                                $aasta = "18";
-                                $sugu = "mees";
-                                break;
-                            case 2:
-                                $aasta = "18";
-                                $sugu = "naine";
-                                break;
-                            case 3:
-                                $aasta = "19";
-                                $sugu = "mees";
-                                break;
-                            case 4:
-                                $aasta = "19";
-                                $sugu = "naine";
-                                break;
-                            case 5:
-                                $aasta = "20";
-                                $sugu = "mees";
-                                break;
-                            case 6:
-                                $aasta = "20";
-                                $sugu = "naine";
-                                break;
-                            default:
-                                echo "See pole õige isikukood";
-                                break;
-                        }
-                        echo "<br> Sugu: ".$sugu;
-                        echo "<br> Sünd: ".$aasta.substr($_GET['isikukood'], 1, 2);
-                    }
-                }
-                isikukood();
-                echo "<br><br>";
+    $a = array("Poiss", "Lilled", "Auto", "Kass", "Mees");
+    $o = array("jookseb", "õitsevad", "seisab", "magab", "loeb");
+    $s = array("pilti", "õuna", "ülesannet", "raamatut", "kartuleid");
+
+    function lause($a, $o, $s){
+        shuffle($a);
+        shuffle($o);
+        shuffle($s);
+        echo $a[0]." ".$o[0]." ".$s[0]."!";
+    }
+
+    lause($a, $o, $s);
+            
     ?>  
 
 
