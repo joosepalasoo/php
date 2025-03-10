@@ -1,135 +1,100 @@
 <!doctype html>
 <html lang="et">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>php ülesannded</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Harjutus 4</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    </head>
 <body>
     <div class="container">
-        <h1>Harjutus 4</h1>
         <!--h04  -->
         <!--joosep alasoo it-23-->
         <!--03.03.25-->
-        <form action="#" method="get">
-            <h2>Jagamine</h2>
-            Number 1: <input type="number" name="number1" id="number1" /><br>
-            Number 2: <input type="number" name="number2" id="number2" /><br>
-            <input type="submit" value="Saada" />
-            <?php
-                if (!empty($_GET["number1"]) && !empty($_GET["number2"])) {
-                    $number1 = $_GET['number1'];
-                    $number2 = $_GET['number2'];
+        <h1>Harjutus 04</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <form>
+                    <div class="mb-3">
+                        <label for="arv1" class="form-label">Arv1</label>
+                        <input type="number" class="form-control" name="arv1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="arv2" class="form-label">Arv2</label>
+                        <input type="number" class="form-control" name="arv2">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <?php
+                    if(isset($_GET["arv1"])&&isset($_GET["arv2"])){
+                        $arv1 = $_GET["arv1"];
+                        $arv2 = $_GET["arv2"];
+                        if($arv2==0){
+                            echo '<div class="alert alert-danger" role="alert">
+                            Nulliga ei saa jagada
+                            </div>';
+                        }else{
+                            $jaga = $arv1 / $arv2;
+                            printf('<div class="alert alert-success" role="alert">
+                            Tubli!
+                            </div>%d / %d = %0.2f', $arv1, $arv2, $jaga);
+                        }
+                        if($arv1>$arv2){
+                            echo '<div class="alert alert-danger" role="alert">
+                            Arv1 on suurem!
+                            </div>';
 
-                    if ($number2 == 0) {
-                        echo "Nulliga jagamine ei ole sobilik";
-                    } else {
-                        $jagamine = $number1 / $number2;
-                        echo "Jagamise tulemus on " . $jagamine;
-                    }
-                } else {
-                    echo "Sisesta andmed";
-                }
-            ?>
-
-            <h2>Kumb on vanem?</h2>
-            Vanus 1: <input type="number" name="vanus1" id="vanus1" /><br>
-            Vanus 2: <input type="number" name="vanus2" id="vanus2" /><br>
-            <input type="submit" value="Saada" />
-            <?php
-                if (!empty($_GET["vanus1"]) && !empty($_GET["vanus2"])) {
-                    $vanus1 = $_GET['vanus1'];
-                    $vanus2 = $_GET['vanus2'];
-
-                    if ($vanus1 > $vanus2) {
-                        echo "Vanus 1 on vanem";
-                    } elseif ($vanus1 < $vanus2) {
-                        echo "Vanus 2 on vanem";
-                    } else {
-                        echo "Nad on sama vanad";
-                    }
-                } else {
-                    echo "Sisesta andmed";
-                }
-            ?>
-
-            <h2>Ristkülik või ruut</h2>
-            Külg 1: <input type="number" name="kylg1" id="kylg1" /><br>
-            Külg 2: <input type="number" name="kylg2" id="kylg2" /><br>
-            <input type="submit" value="Saada" />
-            <?php
-                if (!empty($_GET["kylg1"]) && !empty($_GET["kylg2"])) {
-                    $kylg1 = $_GET['kylg1'];
-                    $kylg2 = $_GET['kylg2'];
-
-                    if ($kylg1 == $kylg2) {
-                        echo "See on ruut";
-                    } else {
-                        echo "See on ristkülik";
-                    }
-                } else {
-                    echo "Sisesta andmed";
-                }
-            ?>
-
-            <h2>Ristkülik või ruut (pilt)</h2>
-            <?php
-                if (!empty($_GET['kylg1']) && !empty($_GET['kylg2'])) {
-                    $kylg1 = $_GET['kylg1'];
-                    $kylg2 = $_GET['kylg2'];
-
-                    if ($kylg1 == $kylg2) {
-                        echo "<img src='img/root.png'>";
-                    } else {
-                        echo "<img src='img/tri.jpeg'>";
-                    }
-                }
-            ?>
-
-            <h2>Juubel</h2>
-            Sünniaasta: <input type="number" name="synniaasta" id="synniaasta" /><br>
-            <input type="submit" value="Saada" />
-            <?php
-                if (!empty($_GET["synniaasta"])) {
-                    $synniaasta = $_GET['synniaasta'];
-
-                    if ($synniaasta % 5 == 0) {
-                        echo "Juubel";
-                    } else {
-                        echo "Ei ole juubel";
-                    }
-                } else {
-                    echo "Sisesta andmed";
-                }
-            ?>
-
-            <h2>Hinne</h2>
-            Punktid: <input type="number" name="punktid" id="punktid" /><br>
-            <input type="submit" value="Saada" />
-            <?php
-                if (!empty($_GET["punktid"])) {
-                    $punktid = $_GET['punktid'];
-
-                    switch (true) {
-                        case ($punktid < 5):
-                            echo "KASIN!";
+                        }else if($arv1<$arv2){
+                            echo '<div class="alert alert-danger" role="alert">
+                            Arv1 on väiksem!
+                            </div>';
+                        }else{
+                            echo '<div class="alert alert-danger" role="alert">
+                            Arvud on võrsed!
+                            </div>';
+                        }   
+                        if($arv1==$arv2){
+                            echo '<div class="alert alert-danger" role="alert">
+                            Tegemist on ruuduga!
+                            <img width="50" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/64x64/plain/shape_square.png" alt="">
+                            </div>';
+                        }else{
+                            echo '<div class="alert alert-danger" role="alert">
+                            Tegemist on ristkülikuga!
+                            <img width="50" src="https://cdn-icons-png.flaticon.com/512/5895/5895916.png" alt="">
+                            </div>';
+                        }
+                        if($arv1%5==0){
+                            echo '<div class="alert alert-danger" role="alert">
+                            JUUBEL!
+                            </div>';
+                        }else{
+                            echo '<div class="alert alert-danger" role="alert">
+                            Ei ole juubel!
+                            </div>';
+                        }
+                        switch($arv1){
+                            case ($arv1 >= 10): echo 'SUPER';
                             break;
-                        case ($punktid >= 5 && $punktid < 10):
-                            echo "TEHTUD!";
+                            case ($arv1 >= 5 and $arv1<10): echo 'TEHTUD!';
                             break;
-                        case ($punktid == 10):
-                            echo "SUPER!";
+                            case ($arv1 < 5): echo 'Kasin!';
                             break;
+
+                            default: echo 'SISETA POMA PUNKTID!';
+
+                        }
+                  
                     }
-                } else {
-                    echo "Sisesta oma punktid!";
-                }
-            ?>
-        </form>
+
+                    
+                ?>
+            </div>
+        </div>
+
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
 </html>
