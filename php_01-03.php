@@ -8,8 +8,9 @@
         <meta name="author" content="Kaspar Plaas IT-23">
     </head>
 <body>
-// joosep alasoo 10.03.2025
-// Harjutus 1
+            <!--h03  -->
+            <!--joosep alasoo it-23-->
+            <!--03.03.25-->
     <h1>Harjutus 1</h1>
     <?php
 echo '"It\'s My life - Dr.Alban"<br>';
