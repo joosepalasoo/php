@@ -8,7 +8,7 @@
         <meta name="author" content="Kaspar Plaas IT-23">
     </head>
 <body>
-            <!--h03  -->
+            <!--h01  -->
             <!--joosep alasoo it-23-->
             <!--03.03.25-->
     <h1>Harjutus 1</h1>

@@ -1,47 +1,49 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="et">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>php ülesannded</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+        <!--h06  -->
+        <!--joosep alasoo it-23-->
+        <!--03.03.25-->
 <body>
     <div class="container">
-        <h1>Harjutus 5</h1>
+        <h1>Ülesanne 5</h1>
         <?php
-
-            echo "<h3>Tüdrukud</h3><br>";
-            $tydrukud = array("Jane", "Maria", "Melanie", "Birgit", "Emma", "Gerda", "Eve", "Liisa");
-            sort($tydrukud);
-            foreach($tydrukud as $tydruk){
-                echo "$tydruk<br>";
+            echo "<h1>Nimed:</h1>";
+            $nimed = array('mari', 'kati', 'juhan', 'miku', 'uku');
+            sort($nimed);
+            // print_r($nimed)
+            $counter = 0;
+            foreach($nimed as $nimi){
+                echo "$nimi <br>";
             }
-            echo "<br>";
-
-            echo "<h3>3 Esimest tüdrukut</h3><br>";
-            for($i = 0; $i < 3; $i++ ){
-                echo "$tydrukud[$i]<br>";
+            echo "<h2>3 nime:</h2>";
+            foreach($nimed as $nimi){
+                $counter++;
+                if($counter>3){
+                    break;
+                }else{
+                    echo "$nimi <br>";
+                }   
             }
-            echo "<br>";
-
-            echo "<h3>Viimane tüdruk</h3><br>";
-            echo end($tydrukud)."<br>";
-            echo "<br>";
-
-            echo "<h3>Suvaline tüdruk</h3><br>";
-            $suvaline = rand(0, count($tydrukud)-1);
-            echo "$tydrukud[$suvaline]<br>";
-            echo "<br>";
             
-            $automargid = array("Subaru","BMW","Acura","Mercedes-Benz","Lexus","GMC","Volvo","Toyota","Volkswagen","Volkswagen","GMC","Jeep","Saab","Hyundai","Subaru","Mercedes-Benz",
+            echo "<h2>Viimane nimi:</h2>";
+            echo end($nimed);
+            echo "<h2>Suvaline nimi:</h2>";
+            echo $nimed[array_rand($nimed)];
+            echo "<h1>Autod:</h1>";
+            $autod = array ("Subaru","BMW","Acura","Mercedes-Benz","Lexus","GMC","Volvo","Toyota","Volkswagen","Volkswagen","GMC","Jeep","Saab","Hyundai","Subaru","Mercedes-Benz",
             "Honda","Kia","Mercedes-Benz","Chevrolet","Chevrolet","Porsche","Buick","Dodge","GMC","Dodge","Nissan","Dodge","Jaguar","Ford","Honda","Toyota","Jeep",
             "Kia","Buick","Chevrolet","Subaru","Chevrolet","Chevrolet","Pontiac","Maybach","Chevrolet","Plymouth","Dodge","Nissan","Porsche","Nissan","Mercedes-Benz",
             "Suzuki","Nissan","Ford","Acura","Volkswagen","Lincoln","Mazda","BMW","Mercury","Mitsubishi","Ram","Audi","Kia","Pontiac","Toyota","Acura","Toyota","Toyota",
             "Chevrolet","Oldsmobile","Acura","Pontiac","Lexus","Chevrolet","Cadillac","GMC","Jeep","Audi","Acura","Acura","Honda","Dodge","Hummer","Chevrolet","BMW",
             "Honda","Lincoln","Hummer","Acura","Buick","BMW","Chevrolet","Cadillac","BMW","Pontiac","Audi","Hummer","Suzuki","Mitsubishi","Jeep","Buick","Ford");
-
-            $VIN = array("1GKS1GKC8FR966658", "1FTEW1C87AK375821", "1G4GF5E30DF760067", "1FTEW1CW9AF114701", "WAUGGAFC8CN433989", "3G5DA03E83S704506", "4JGDA2EB0DA207570", 
+            $vins = array ("1GKS1GKC8FR966658", "1FTEW1C87AK375821", "1G4GF5E30DF760067", "1FTEW1CW9AF114701", "WAUGGAFC8CN433989", "3G5DA03E83S704506", "4JGDA2EB0DA207570", 
             "1FTEW1E88AK070552", "SAJWA0F77F8732763", "JHMFA3F21BS660717", "JTHBP5C29C5750730", "WA1LFAFP9DA963060", "3D7TT2CT6BG521976", "WVWN7EE961049", 
             "2C3CA5CG3BH341234", "YV4952CFXC162587", "KNALN4D71F5805172", "JN1CV6EK7BM903692", "5FRYD3H84EB186765", "WAUL64B83N441878", "WDDGF4HBXCF845665", 
             "WAUKF78E45A133973", "JN1BY0AR2AM022612", "WA1EY74L69D931520", "3GYFNGEYXBS290465", "1D7CW2GK4AS059336", "JN8AZ1FY5EW087447", "WAUBF78E57A343355", 
@@ -56,118 +58,88 @@
             "5GAER13D19J026924", "1G4HC5EM1BU329204", "3VWML7AJ6CM772736", "3C6TD4HT2CG011211", "JTDZN3EU2FJ023675", "JN8AZ1MU4CW041721", "KNAFX5A82F5991024", 
             "1N6AA0CJ1D57470", "WAUEG98E76A780908", "WAUAF78E96A920706", "1GT01XEG8FZ268942", "1FTEW1CW4AF371278", "JN1AZ4EH8DM531691", "WAUEKAFBXAN294295", 
             "1N6AA0EDXFN868772", "WBADW3C59DJ422810");
-
-            echo "<h3>Autod arv</h3><br>";
-            echo count($automargid)."<br>";
-            if (count($automargid) == count($VIN)){
-                echo ("VIN koodide arv on sama mis automarkide arv");
-            } else {
-                echo ("VIN koodide arv ei ole sama mis automarkide arv");
+            echo "<h2>Autode arv:</h2>";
+            echo count($autod);
+            echo "<h2>Massiivide kontroll:</h2>";
+            if(count($autod) == count($vins)){
+                echo "Klapib";
+            }else{
+                echo "Ei klapi";
             }
-            echo "<br><br>";
+            echo "<h2>Toyotate ja Audide arv:</h2>";
+            $toyotad = 0;
+            $audid = 0;
+            foreach($autod as $auto){
 
-            echo "<h3>Audid ja Toyotad</h3><br>";
-            $auditoyota = array();
-            for ($i = 0; $i < count($automargid); $i++){
-                if ($automargid[$i] == "Audi" || $automargid[$i] == "Toyota"){
-                    array_push($auditoyota, $automargid[$i]);
+                if($auto == "Toyota"){
+                    $toyotad++;
+                }
+                if($auto == "Audi"){
+                    $audid++;
                 }
             }
-            print_r($auditoyota);
-            echo "<br><br>";
-
-            echo "<h3>VIN mille märkide arv on alla 17</h3><br>";
-            for ($i = 0; $i < count($VIN); $i++){
-                if (strlen($VIN[$i]) < 17){
-                    echo $VIN[$i]."<br>";
+            echo "<br>Toyotasi kokku: $toyotad";
+            echo "<br>audisid kokku: $audid";
+            echo "<h2>Vin koodid:</h2>";
+            $vin_kokku = 0;
+            foreach($vins as $vin){
+                if(strlen($vin)<17){
+                    $vin_kokku++;
                 }
             }
-            echo "<br><br>";
-
-            echo "<h3>Keskmised palgad</h3><br>";
-            $palgad = array(1220,1213,1295,1312,1298,1354,1296,1286,1292,1327,1369,1455);
+            echo "<br>Valed Vin kokku: $vin_kokku";
+            echo "<h1>Palgad:</h1>";
+            $palgad = array (1220,1213,1295,1312,1298,1354,1296,1286,1292,1327,1369,1455);
             $keskmine = array_sum($palgad) / count($palgad);
-            echo "Keskmine palk on $keskmine<br>";
-            echo "<br><br>";
+            echo "2018 keskmine palk: $keskmine";
+            ?>
+            <h1>Firmad:</h1>
+            <form action=""><input type="text" name="eemaldafirma"></form>
+            <?php
+            $firmad = array ("Kimia","Mynte","Voomm","Twiyo","Layo","Talane","Gigashots","Tagchat","Quaxo","Voonyx","Kwilith","Edgepulse","Eidel","Eadel","Jaloo","Oyope","Jamia");
 
-            echo "<h3>Firmad</h3><br>";
-            $firmad = array("Kimia","Mynte","Voomm","Twiyo","Layo","Talane","Gigashots","Tagchat","Quaxo","Voonyx","Kwilith","Edgepulse","Eidel","Eadel","Jaloo","Oyope","Jamia");
-            foreach($firmad as $firma){
+            if(isset($_GET["eemaldafirma"])){
+                $midagi = $_GET["eemaldafirma"];
+                echo "kustutan $midagi";
+                unset($firmad[array_search($midagi,$firmad)]);
+                
+            }
+                        foreach($firmad as $firma){
                 echo "$firma<br>";
             }
+            
 
-            echo "<form action='#' method='get'> Kustuta firma <input type='text' name='kustuta' id='kustuta'> <input type='submit' value='Kustuta'> </form>";
-            $kustutama = $_GET['kustuta'];
-            if(!empty($_GET["kustuta"])){
-                if(in_array($kustutama, $firmad)){
-                    $key = array_search($kustutama, $firmad);
-                    unset($firmad[$key]);
-                    echo "Kustutasin firma $kustutama ";
-                    foreach($firmad as $firma){
-                        echo "$firma<br>";
-                    }
-                } else {
-                    echo "Sellist firmat pole";
-                }
-            }
-            echo "<br><br>";
-
-            echo "<h3>Riigid</h3><br>";
-            $riigid = array("Indonesia","Canada","Kyrgyzstan","Germany","Philippines",
+            echo "<h1>Riigid:</h1>";
+            echo "<h2>Pikima riigiga nimi:</h2>";
+            $riigid = array ("Indonesia","Canada","Kyrgyzstan","Germany","Philippines",
             "Philippines","Canada","Philippines","South Sudan","Brazil",
             "Democratic Republic of the Congo","Indonesia","Syria","Sweden",
             "Philippines","Russia","China","Japan","Brazil","Sweden","Mexico","France",
             "Kazakhstan","Cuba","Portugal","Czech Republic");
-            $len = array_map('strlen', $riigid);
-            $index = array_search(max($len), $len);
-            echo $riigid[$index]; 
-            echo "<br>";
-            echo max($len);
-            echo "<br><br>";
-
-            echo "<h3>Hiina nimed</h3><br>";
-            $ching = array("瀚聪","月松","雨萌","展博","雪丽","哲恒","慧妍","博裕","宸瑜","奕漳",
-            "思宏","伟菘","彦歆","睿杰","尹智","琪煜","惠茜","晓晴","志宸","博豪",
-            "璟雯","崇杉","俊誉","军卿","辰华","娅楠","志宸","欣妍","明美");
-            sort($ching);
-            echo $ching[0];
-            echo "<br>";
-            echo $ching[count($ching)-1];
-            echo "<br><br>";
-
-            echo "<h3>Google</h3><br>";
-            $google = array("Feake","Bradwell","Dreger","Bloggett","Lambole","Daish","Lippiett",
-            "Blackie","Stollenbeck","Houseago","Dugall","Sprowson","Kitley","Mcenamin",
-            "Allchin","Doghartie","Brierly","Pirrone","Fairnie","Seal","Scoffins",
-            "Galer","Matevosian","DeBlase","Cubbin","Izzett","Ebi","Clohisey",
-            "Prater","Probart","Samwaye","Concannon","MacLure","Eliet","Kundt","Reyes");
-            echo '<form action="#" method="get"> <input type="text" name="google" id="google"> <input type="submit" value="Otsi"> </form>';
-            $googleget = $_GET['google'];
-            if(!empty($_GET["google"])){
-                if(in_array($googleget, $google)){
-                    $key = array_search($googleget, $google);
-                    echo "<div class=\"alert alert-primary\" role=\"alert\">Otsisid $googleget ja leidsin $google[$key]</div>";
-                } else {
-                    echo "<div class=\"alert alert-warning\" role=\"alert\">ei leidnud</div>";
+            $pikimRiik = "";
+            foreach($riigid as $riik){
+                if(strlen($riik) > strlen($pikimRiik)){
+                    $pikimRiik=$riik;
                 }
             }
-            echo "<br><br>";
-       
-        ?>
-        <div class="container">
+            echo "<br>Pikim riik on $pikimRiik<br>";
+            echo "<h1>Pildid:</h1>";
+            $pildid = array ("prentice.jpg","freeland.jpg","peterus.jpg","devlin.jpg","gabriel.jpg","pete.jpg");
+            echo "<h2>Kolmas pilt:</h2>";
+            echo "<img width='100' src='img/$pildid[2]' alt='img/$pildid[2]'><br>";
+            ?>
             <div class="row">
-                <?php
-                    $images = ["prentice.jpg", "freeland.jpg", "peterus.jpg", "devlin.jpg", "gabriel.jpg", "pete.jpg"];
-                    foreach ($images as $image) {
-                        echo '<div class="col-md-2">';
-                        echo '<img src="img/' . $image . '" alt="' . $image . '" class="img-thumbnail">';
-                        echo '</div>';
-                    }
-                ?>
+            <?php
+            echo "<h2>Kõik pildid:</h2>";
+            foreach($pildid as $pilt){
+                echo "<div class='col-sm-4'>
+                    <img src='img/$pilt' alt='$pilt'>
+                </div>";
+            }
+            ?>
             </div>
-        </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9">
-  </body>
+    </div>
+    
+</body>
 </html>
