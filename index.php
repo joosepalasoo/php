@@ -14,6 +14,7 @@
         <nav>
             <a href="index.php">Avaleht</a>
             <a href="php_01-03.php">PHP 1-3</a>
+            <a href="php_03.php">PHP 3</a>
             <a href="php_04.php">Harjutus 4</a>
             <a href="php_05.php">Harjutus 5</a>
             <a href="php_06.php">Harjutus 6</a>

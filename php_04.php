@@ -1,100 +1,83 @@
 <!doctype html>
 <html lang="et">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>php ülesannded</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PHP ülesanded</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
 <body>
-    <div class="container">
-        <!--h04  -->
-        <!--joosep alasoo it-23-->
-        <!--03.03.25-->
-        <h1>Harjutus 04</h1>
-        <div class="row">
-            <div class="col-md-4">
-                <form>
-                    <div class="mb-3">
-                        <label for="arv1" class="form-label">Arv1</label>
-                        <input type="number" class="form-control" name="arv1">
-                    </div>
-                    <div class="mb-3">
-                        <label for="arv2" class="form-label">Arv2</label>
-                        <input type="number" class="form-control" name="arv2">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-                <?php
-                    if(isset($_GET["arv1"])&&isset($_GET["arv2"])){
-                        $arv1 = $_GET["arv1"];
-                        $arv2 = $_GET["arv2"];
-                        if($arv2==0){
-                            echo '<div class="alert alert-danger" role="alert">
-                            Nulliga ei saa jagada
-                            </div>';
-                        }else{
-                            $jaga = $arv1 / $arv2;
-                            printf('<div class="alert alert-success" role="alert">
-                            Tubli!
-                            </div>%d / %d = %0.2f', $arv1, $arv2, $jaga);
-                        }
-                        if($arv1>$arv2){
-                            echo '<div class="alert alert-danger" role="alert">
-                            Arv1 on suurem!
-                            </div>';
+<div class="container">
+    <h1>Harjutus 04</h1>
 
-                        }else if($arv1<$arv2){
-                            echo '<div class="alert alert-danger" role="alert">
-                            Arv1 on väiksem!
-                            </div>';
-                        }else{
-                            echo '<div class="alert alert-danger" role="alert">
-                            Arvud on võrsed!
-                            </div>';
-                        }   
-                        if($arv1==$arv2){
-                            echo '<div class="alert alert-danger" role="alert">
-                            Tegemist on ruuduga!
-                            <img width="50" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/64x64/plain/shape_square.png" alt="">
-                            </div>';
-                        }else{
-                            echo '<div class="alert alert-danger" role="alert">
-                            Tegemist on ristkülikuga!
-                            <img width="50" src="https://cdn-icons-png.flaticon.com/512/5895/5895916.png" alt="">
-                            </div>';
-                        }
-                        if($arv1%5==0){
-                            echo '<div class="alert alert-danger" role="alert">
-                            JUUBEL!
-                            </div>';
-                        }else{
-                            echo '<div class="alert alert-danger" role="alert">
-                            Ei ole juubel!
-                            </div>';
-                        }
-                        switch($arv1){
-                            case ($arv1 >= 10): echo 'SUPER';
-                            break;
-                            case ($arv1 >= 5 and $arv1<10): echo 'TEHTUD!';
-                            break;
-                            case ($arv1 < 5): echo 'Kasin!';
-                            break;
-
-                            default: echo 'SISETA OMA PUNKTID!';
-
-                        }
-                  
-                    }
-
-                    
-                ?>
-            </div>
+    <form method="get" class="col-md-4">
+        <div class="mb-3">
+            <label class="form-label">Arv1</label>
+            <input type="number" class="form-control" name="arv1">
         </div>
+        <div class="mb-3">
+            <label class="form-label">Arv2</label>
+            <input type="number" class="form-control" name="arv2">
+        </div>
+        <button type="submit" class="btn btn-primary">Arvuta</button>
+    </form>
 
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <?php
+    if (isset($_GET['arv1']) && isset($_GET['arv2']) && $_GET['arv1'] !== "" && $_GET['arv2'] !== "") {
+        $arv1 = (float)$_GET['arv1'];
+        $arv2 = (float)$_GET['arv2'];
+
+        echo "<hr>";
+
+        // Jagamine
+        if ($arv2 == 0) {
+            echo '<div class="alert alert-danger">Nulliga ei saa jagada</div>';
+        } else {
+            $tulemus = $arv1 / $arv2;
+            echo "<div class='alert alert-success'>Tubli!<br>$arv1 / $arv2 = " . round($tulemus, 2) . "</div>";
+        }
+
+        // Võrdlus
+        if ($arv1 > $arv2) {
+            echo '<div class="alert alert-info">Arv1 on suurem!</div>';
+        } elseif ($arv1 < $arv2) {
+            echo '<div class="alert alert-info">Arv1 on väiksem!</div>';
+        } else {
+            echo '<div class="alert alert-info">Arvud on võrdsed!</div>';
+        }
+
+        // Kujundi määramine
+        if ($arv1 == $arv2) {
+            echo '<div class="alert alert-warning">Tegemist on ruuduga!<br>
+            <img width="50" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/64x64/plain/shape_square.png"></div>';
+        } else {
+            echo '<div class="alert alert-warning">Tegemist on ristkülikuga!<br>
+            <img width="50" src="https://cdn-icons-png.flaticon.com/512/5895/5895916.png"></div>';
+        }
+
+        // Juubel
+        echo ($arv1 % 5 == 0)
+            ? '<div class="alert alert-success">JUUBEL!</div>'
+            : '<div class="alert alert-secondary">Ei ole juubel!</div>';
+
+        // Punktide hinnang
+        echo "<div class='mt-2'><strong>Punktide hinnang: </strong>";
+        if ($arv1 >= 10) {
+            echo 'SUPER';
+        } elseif ($arv1 >= 5) {
+            echo 'TEHTUD!';
+        } else {
+            echo 'Kasin!';
+        }
+        echo "</div>";
+
+    } elseif (isset($_GET['arv1']) || isset($_GET['arv2'])) {
+        // Kui vorm on saadetud, aga andmed puuduvad või osaliselt täidetud
+        echo '<div class="alert alert-danger mt-4">Paha poiss! Sisesta mõlemad arvud!</div>';
+    }
+    ?>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

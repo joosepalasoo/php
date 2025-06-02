@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="et">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> php Harjutus1-3</title>
-        <meta name="keywords" content="HTML,CSS,HTML5,CSS3">
-        <meta name="author" content="Kaspar Plaas IT-23">
-    </head>
-<body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  </head>
+  <body>
             <!--h01  -->
             <!--joosep alasoo it-23-->
             <!--03.03.25-->
@@ -74,30 +73,7 @@ $b = 7;
     printf("%d * %d = %d<br>",$a, $b, $a*$b);
 ?>
 
-</body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  </body>
 </html>
-
-
-<h1>Harjutus 03</h1>
-
-<form action="" method="get">
-    a <input type="number" name="a" required min=1><br>
-    b <input type="number" name="b" required min=1><br>    
-    c <input type="number" name="h" required min=1><br>
-    <input type="submit" value="Arvuta">
-
-</form>
-
-<?php
-
-if(isset($_GET["a"])&&isset($_GET["b"])&&isset($_GET["h"])){
-    $kylg_a = $_GET["a"];
-    $kylg_b = $_GET["b"];
-    $kylg_h = $_GET["h"];
-    $trapets_s = ($kylg_a+$kylg_b)/2*$kylg_h;
-    $romb_p = 4 * $kylg_a;
-    printf("Külg A: %d<br>Külg B: %d<br>Kõrgus: %d<br>Trapetsi pindala: %.2f<br>Romb: %d", $kylg_a, $kylg_b, $kylg_h, $trapets_s, $romb_p);   
-}
-
-
-?>
