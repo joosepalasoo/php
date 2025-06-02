@@ -11,7 +11,7 @@
         <h1>Harjutus 3</h1>
         <!-- Harjutus 3 -->
         <!-- Joosep Alasoo IT-23 -->
-        <!-- 03.03.25 -->
+        <!-- 02.06.25 -->
         <form method="get" action="#">
             <div class="row">
                 <div class="col-sm-6">

@@ -13,8 +13,8 @@
         <h2>php Harjutused</h2>
         <nav>
             <a href="index.php">Avaleht</a>
-            <a href="php_01-03.php">PHP 1-3</a>
-            <a href="php_03.php">PHP 3</a>
+            <a href="php_01-02.php">Harjutus 1-2</a>
+            <a href="php_03.php">Harjutus 3</a>
             <a href="php_04.php">Harjutus 4</a>
             <a href="php_05.php">Harjutus 5</a>
             <a href="php_06.php">Harjutus 6</a>

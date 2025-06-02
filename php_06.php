@@ -9,7 +9,7 @@
     </head>
         <!--h06  -->
         <!--joosep alasoo it-23-->
-        <!--03.03.25-->
+        <!--02.06.25-->
 <body>
     <div class="container">
         <h1>Harjutus 06</h1>

@@ -11,7 +11,7 @@
     <h1>ülesanne 7</h1>
         <!--h07  -->
         <!--joosep alasoo it-23-->
-        <!--03.03.25-->
+        <!--02.06.25-->
     <?php
 	function tervita(){
 		return "Tere päiksekene!";	
@@ -20,9 +20,6 @@
     ?>  
 
     <h1>ülesanne 7.2</h1>
-        <!--h07  -->
-        <!--joosep alasoo it-23-->
-        <!--03.03.25-->
     <?php
      function Uudiskiri(){
         echo "<div class='form-group'>
@@ -40,9 +37,6 @@
 
 
     <h1>ülesanne 7.3</h1>
-        <!--h07  -->
-        <!--joosep alasoo it-23-->
-        <!--03.03.25-->
     <?php
     function Kasutaja($kasutaja){
         echo strtolower($kasutaja)."@hkhk.edu.ee";
@@ -58,9 +52,6 @@
 
 
     <h1>ülesanne 7.4</h1>
-        <!--h07  -->
-        <!--joosep alasoo it-23-->
-        <!--03.03.25-->
     <?php
     function Arvud(){
         echo "<form action='#' method='get'>
@@ -93,9 +84,6 @@
 
 
     <h1>ülesanne 7.5</h1>
-        <!--h07  -->
-        <!--joosep alasoo it-23-->
-        <!--03.03.25-->
     <?php
         function Pindala($kylg1, $kylg2){
             echo "Ristküliku pindala on ".$kylg1 * $kylg2;
@@ -122,9 +110,6 @@
 
 
     <h1>ülesanne 7.6</h1>
-        <!--h07  -->
-        <!--joosep alasoo it-23-->
-        <!--03.03.25-->
     <?php
                          function isikukood(){
                             echo "<form action='#' method='get'>
@@ -182,9 +167,6 @@
 
 
     <h1>ülesanne 7.7</h1>
-    <!--h07  -->
-    <!--joosep alasoo it-23-->
-    <!--03.03.25-->
     <?php
     $a = array("Poiss", "Lilled", "Auto", "Kass", "Mees");
     $o = array("jookseb", "õitsevad", "seisab", "magab", "loeb");

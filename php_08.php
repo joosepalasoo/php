@@ -11,7 +11,7 @@
     <div class="container">
     <!--h08  -->
     <!--joosep alasoo it-23-->
-    <!--03.03.25-->
+    <!--02.06.25-->
         <h1>Harjutus 08</h1>
         <div class="row">
             <div class="col-md-4">
